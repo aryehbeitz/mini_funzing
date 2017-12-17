@@ -17,4 +17,13 @@
 * When a user creates an order off an activity, it disappears for him. It also disappears if there is no more room left. Your own activities you can view and edit, but cannot order off them.
 
 * New orders appear in the Orders tab
- 
+
+## Deploying to Heroku
+
+* run `heroku login` the `heroku create`
+
+* run `git push heroku master` after pushing to repo
+
+* run `heroku run rake db:migrate` and then `heroku run rake db:seed` then `heroku open` to see the site live.
+
+* this site is hosted live at https://secret-falls-16766.herokuapp.com/
