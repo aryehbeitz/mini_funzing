@@ -1,0 +1,25 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#order_form {
+  padding: 10px;
+  p {
+    input[type=number]::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+    input[type=number] {
+      width: 100px;
+    }
+  }
+}
+
+#order_confirmation {
+  border: 1px solid black;
+  padding: 0;
+  .activity_owner_name, .order_date {
+    border-top: 1px solid black;
+  }
+  .order_id, .title, .activity_owner_name, .order_date, .num_tickets, .total_price, .activity_owner_name {
+    padding: 10px;
+  }
+}

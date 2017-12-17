@@ -1,0 +1,10 @@
+<div id="order_form">
+  <%= form_for @order do |order_form| %>
+    <p>Date: <%= @activity.date.localtime.strftime("%F %I:%M %p") %></p>
+    <p>$<%= @activity.ticket_price %> per Ticket</p>
+    How many tickets?<br>
+    <p><%= order_form.number_field 'number_of_tickets', {min: 0, class: 'form-control'} %></p>
+    <p><%= order_form.submit 'Book now!', class: 'btn btn-primary' %></p>
+    <%= hidden_field_tag 'activity_id',  @activity.id.to_i %>
+  <% end %>
+</div>

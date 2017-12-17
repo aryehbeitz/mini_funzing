@@ -1,0 +1,54 @@
+<%= form_with(model: activity, local: true) do |f| %>
+  <form class="form-horizontal col-lg-5">
+    <div class="form-group">
+      <label for="title" class="control-label col-lg-2">Title</label>
+      <div class="col-lg-10">
+        <%= f.text_field 'title', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="control-label col-lg-2">Description</label>
+      <div class="col-lg-10">
+        <%= f.text_area 'description', {rows: '3', class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="maximum_attendees" class="control-label col-lg-2">Maximum Attendees</label>
+      <div class="col-lg-2">
+        <%= f.number_field 'maximum_attendees', {min: 1, class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ticket_price" class="control-label col-lg-2">Ticket Price</label>
+      <div class="col-lg-2">
+        <%= f.number_field 'ticket_price', {min: 1, step: 0.01, class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date" class="control-label col-lg-2">Date</label>
+      <div class="col-lg-2">
+        <%= f.date_field 'date', class: 'form-control' %>
+      </div>
+    </div>
+    <%= hidden_field_tag 'activity_id',  activity.id.to_i %>
+
+    <%= f.submit params[:action] == 'edit' ? 'Save' : 'Create', class: 'btn btn-primary' %>
+  </form>
+
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: mini_funzing_development
+  pool: 5
+  username: rails_dev
+  host: localhost
+  min_messages: warning
+  password: 123
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: mini_funzing_test
+  pool: 5
+  username: rails_dev
+  host: localhost
+  password: 123

@@ -1,0 +1,18 @@
+<h1>Activities</h1>
+<div id="activities_index">
+  <div class="activities_container">
+    <% @activities.order(created_at: :desc).each do |activity| %>
+      <% next if activity.orders.where(user: current_user).present? %>
+      <%= link_to activity do %>
+        <div class="activity_partial col-lg-3">
+          <%= render "activities/activity", activity: activity %>
+          <%= render "activities/actions", activity: activity if current_user&.admin? %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="col-lg-12">
+  <%= link_to 'New Activity', new_activity_path, {class: 'btn btn-default', role: 'button'} if current_user.admin? %>
+</div>

@@ -1,0 +1,47 @@
+// Place all the styles related to the Activities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-group {
+  display: flex;
+}
+
+#activity_show {
+  .col-lg-4 {
+    border: 1px solid black;
+    :nth-of-type(3) {
+      min-height: 200px !important;
+    }
+    .row {
+      padding: 10px;
+      min-height: 30px;
+      border-bottom: 1px solid black;      
+    }
+  }
+  .col-lg-3 {
+    border: 1px solid black;
+  }
+}
+
+#activities_index {
+  .activities_container {
+    a:link { 
+      text-decoration:none; 
+    }
+  }
+}
+
+.activity_partial {
+  .inner_box {
+    border: 1px solid black;
+  }
+  height: 100px;
+  .title {
+    border-bottom: 1px solid black;      
+  }
+  .time {
+    border-bottom: 1px solid black;      
+  }
+  .price {
+    border-bottom: 1px solid black;      
+  }
+}

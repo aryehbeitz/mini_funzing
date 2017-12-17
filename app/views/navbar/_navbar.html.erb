@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Mini funzing</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="<%= params[:controller] == 'orders' ? 'active' : '' %>">
+          <%= link_to('Orders', orders_path)  %>
+        </li>
+        <li class="<%= params[:controller] == 'activities' ? 'active' : '' %>">
+          <%= link_to('Activities', activities_path)  %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <%= render 'devise/menu/registration_items' %>
+        <%= render 'devise/menu/login_items' %>
+      </ul>
+    </div>
+  </div>
+</nav>

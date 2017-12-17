@@ -1,0 +1,9 @@
+<%= link_to activity do %>
+  <i class="glyphicon glyphicon-zoom-in"></i>
+<% end %>
+<%= link_to edit_activity_path(activity) do %>
+  <i class="glyphicon glyphicon-edit"></i>
+<% end %>
+<%= link_to activity, method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <i class="glyphicon glyphicon-remove"></i>
+<% end %>

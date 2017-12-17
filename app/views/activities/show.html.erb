@@ -1,0 +1,20 @@
+<div class="row" id="activity_show">
+  <div class="col-lg-4">
+    <div class="row"><%= @activity.title %></div>
+    <div class="row"><%= @activity.user.name %></div>
+    <div class="row"><%= simple_format(@activity.description) %></div>
+  </div>
+  <% if @activity.user != current_user && @order.user.nil? %>
+    <div class="col-lg-3 col-lg-offset-2">
+      <%= render 'orders/form' %>
+    </div>
+  <% else %>
+    <%= link_to 'There is already an order, click to view', orders_path if @order.user.present? %>
+    <%= 'This is your activity. You can edit it, but cannot order' if @activity.user == current_user %>
+  <% end %>
+</div>
+<p style="height: 30px;"></p>
+
+<% if @activity.user == current_user %>
+  <%= link_to 'Edit', edit_activity_path(@activity), {class: 'btn btn-default', role: 'button'} %> |
+<% end %>
